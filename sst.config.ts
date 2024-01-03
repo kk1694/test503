@@ -5,7 +5,7 @@ export default {
   config(_input) {
     return {
       name: "test503",
-      region: "us-east-1",
+      region: _input.stage === "prod" ? "us-east-1" : 'eu-west-2',
     };
   },
   stacks(app) {
